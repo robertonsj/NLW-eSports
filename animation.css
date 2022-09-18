@@ -1,0 +1,51 @@
+
+/*Animation named 'fromTop' */
+
+header div {
+    /*animation name - time to run - delay - backwards */
+    animation: fromTopToBottom .7s .2s backwards;
+    /*Backwards: sempre que a animação tem um atraso, é interessante
+    que suas propriedades iniciais sejam utilizadas.*/
+}
+
+main section {
+    animation: fromBottomToTop .7s backwards;
+}
+main section:nth-child(1){
+    animation-delay: 0;
+}
+main section:nth-child(2){
+    animation-delay: .4s;
+}
+main section:nth-child(3){
+    animation-delay: .7s;
+}
+
+
+/*Para iniciar a animação em CSS precisamos
+defini-la primeiro com o respectivo nome.
+Na propriedade animation, temos ao menos dois
+valores: nome da prop e o tempo até a execução.*/
+@keyframes fromTopToBottom {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
+
+@keyframes fromBottomToTop {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0)
+    }
+}
